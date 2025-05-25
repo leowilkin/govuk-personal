@@ -6,14 +6,112 @@ import Accordion from "../components/govuk/Accordion.astro";
 const gettingStartedItems = [
   {
     id: "installation",
-    title: "Installation & Setup",
+    title: "Installing Dependencies",
     content: `<ol class="govuk-list govuk-list--number">
-      <li>Install dependencies:<br><code class="govuk-!-font-family-monospace">npm install</code></li>
-      <li>Start development server:<br><code class="govuk-!-font-family-monospace">npm run dev</code></li>
-      <li>Open browser to:<br><code class="govuk-!-font-family-monospace">http://localhost:4321</code></li>
-      <li>Start editing files in <code class="govuk-!-font-family-monospace">src/pages/</code> and see changes instantly!</li>
+      <li>Open the Terminal app. You can find it via Spotlight (press <strong>Cmd + Space</strong>, then type <code class="govuk-!-font-family-monospace">Terminal</code>).</li>
+
+      <li>Install <code class="govuk-!-font-family-monospace">nvm</code> (Node Version Manager):<br>
+        <code class="govuk-!-font-family-monospace">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash</code>
+      </li>
+
+      <li>Add the following lines to your shell config file:<br>
+        <ul>
+          <li>If you use Bash (default on older macOS):<br>
+            Open <code class="govuk-!-font-family-monospace">~/.bash_profile</code> by running:<br>
+            <code class="govuk-!-font-family-monospace">open -e ~/.bash_profile</code>
+          </li>
+          <li>If you use Zsh (default on newer macOS):<br>
+            Open <code class="govuk-!-font-family-monospace">~/.zshrc</code> by running:<br>
+            <code class="govuk-!-font-family-monospace">open -e ~/.zshrc</code>
+          </li>
+        </ul>
+        Then add:<br>
+        <code class="govuk-!-font-family-monospace">export NVM_DIR="$HOME/.nvm"</code><br>
+        <code class="govuk-!-font-family-monospace">[ -s "$NVM_DIR/nvm.sh" ] &amp;&amp; \. "$NVM_DIR/nvm.sh"</code>
+      </li>
+
+      <li>Save the file and reload your terminal configuration by running:<br>
+        <code class="govuk-!-font-family-monospace">source ~/.zshrc</code><br>
+        or<br>
+        <code class="govuk-!-font-family-monospace">source ~/.bash_profile</code>
+      </li>
+
+      <li>Install the latest LTS version of Node.js (which includes npm):<br>
+        <code class="govuk-!-font-family-monospace">nvm install --lts</code>
+      </li>
+
+      <li>Use the LTS version now:<br>
+        <code class="govuk-!-font-family-monospace">nvm use --lts</code>
+      </li>
+
+      <li>Set it as the default version every time you open Terminal:<br>
+        <code class="govuk-!-font-family-monospace">nvm alias default lts/*</code>
+      </li>
+
+      <li>Confirm everything is working:<br>
+        <code class="govuk-!-font-family-monospace">node -v</code><br>
+        <code class="govuk-!-font-family-monospace">npm -v</code>
+      </li>
     </ol>`
   },
+  {
+    id: "creating-repo",
+    title: "Creating the Repository",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>If you don’t already have <strong>Visual Studio Code</strong> installed, download it from 
+        <a href="https://code.visualstudio.com/" class="govuk-link" target="_blank">code.visualstudio.com</a>.<br>
+        Open the downloaded file and drag <code class="govuk-!-font-family-monospace">Visual Studio Code.app</code> into your <code class="govuk-!-font-family-monospace">Applications</code> folder.
+      </li>
+
+      <li>To make VS Code available from the Terminal as <code class="govuk-!-font-family-monospace">code</code>, open VS Code and press <strong>Cmd + Shift + P</strong>, then type:<br>
+        <code class="govuk-!-font-family-monospace">Shell Command: Install 'code' command in PATH</code> and hit Enter.
+      </li>
+
+      <li>Now you can open folders in VS Code from Terminal like this:<br>
+        <code class="govuk-!-font-family-monospace">code .</code>
+      </li>
+
+      <li>Go to <a href="https://github.com/new" class="govuk-link" target="_blank">github.com/new</a> and create a new repository:
+        <ul>
+          <li>Give it a name (e.g. <code class="govuk-!-font-family-monospace">my-project</code>)</li>
+          <li>Leave it public or private depending on your needs</li>
+          <li><strong>Do not</strong> initialize with a README, .gitignore, or license</li>
+          <li>Click <strong>Create repository</strong></li>
+        </ul>
+      </li>
+
+      <li>Open <strong>GitHub Desktop</strong>. If you don’t have it yet, download it from 
+        <a href="https://desktop.github.com/" class="govuk-link" target="_blank">desktop.github.com</a>.
+      </li>
+
+      <li>In GitHub Desktop, click <strong>Clone a repository</strong>, select the one you just created, and choose where to save it on your computer.</li>
+
+      <li>Once cloned, click <strong>Open in Visual Studio Code</strong>. (If not available, you can manually open VS Code and go to <code class="govuk-!-font-family-monospace">File → Open</code> to choose the folder.)</li>
+
+      <li>In the VS Code terminal (View → Terminal), run the following to scaffold a new GOV.UK Personal project inside the folder:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code>
+      </li>
+
+      <li>Follow the prompts (e.g. project name, template options). This creates a new directory for your project.</li>
+
+      <li>Change into the new project folder:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code>
+      </li>
+
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code>
+      </li>
+
+      <li>Start the development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code>
+      </li>
+
+      <li>Open your browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code>
+      </li>
+
+      <li>Start editing files in <code class="govuk-!-font-family-monospace">src/pages/</code> and see changes instantly!</li>
+    </ol>`
   {
     id: "project-structure",
     title: "Project Structure",
