@@ -15,11 +15,15 @@
   "type": "commonjs",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
   },
   "dependencies": {
     "govuk-frontend": "^5.10.1",
     "nunjucks": "^3.2.4",
-    "sass": "^1.89.0"
+    "sass": "^1.89.0",
+    "astro": "^5.8.0"
   }
 }
