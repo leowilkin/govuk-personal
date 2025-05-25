@@ -1,0 +1,93 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Back from "../components/govuk/Back.astro";
+import Accordion from "../components/govuk/Accordion.astro";
+
+const gettingStartedItems = [
+  {
+    id: "installation",
+    title: "Installation & Setup",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>Install dependencies:<br><code class="govuk-!-font-family-monospace">npm install</code></li>
+      <li>Start development server:<br><code class="govuk-!-font-family-monospace">npm run dev</code></li>
+      <li>Open browser to:<br><code class="govuk-!-font-family-monospace">http://localhost:4321</code></li>
+      <li>Start editing files in <code class="govuk-!-font-family-monospace">src/pages/</code> and see changes instantly!</li>
+    </ol>`
+  },
+  {
+    id: "project-structure",
+    title: "Project Structure",
+    content: `<pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">src/
+├── components/           # Reusable components
+│   ├── govuk/           # GOV.UK Design System components  
+│   ├── BaseHead.astro   # HTML head component
+│   ├── Footer.astro     # Site footer
+│   └── Navigation.astro # Site navigation
+├── layouts/             # Page layouts
+│   └── BaseLayout.astro # Main page wrapper
+├── pages/              # Your website pages (auto-routing)
+│   ├── index.astro     # Homepage (/)
+│   ├── about.astro     # About page (/about)
+│   └── [other pages]   # Add more pages here
+├── config/             # Site configuration
+│   └── navigation.ts   # Navigation menu setup
+└── styles/             # CSS and styling</pre>`
+  },
+  {
+    id: "adding-pages",
+    title: "Adding New Pages",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>Create a new .astro file in <code class="govuk-!-font-family-monospace">src/pages/</code><br>
+          Example: <code class="govuk-!-font-family-monospace">src/pages/services.astro</code></li>
+      <li>Use the BaseLayout:
+          <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; margin: 8px 0; border-left: 4px solid #b1b4b6;">---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+&lt;BaseLayout title="Services"&gt;
+  &lt;main class="govuk-main-wrapper" id="main-content"&gt;
+    &lt;h1 class="govuk-heading-xl"&gt;Services&lt;/h1&gt;
+    &lt;p class="govuk-body"&gt;Your content here...&lt;/p&gt;
+  &lt;/main&gt;
+&lt;/BaseLayout&gt;</pre></li>
+      <li>The page will automatically be available at <code class="govuk-!-font-family-monospace">/services</code></li>
+      <li>Add to navigation in <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> if needed</li>
+    </ol>`
+  },
+  {
+    id: "customization",
+    title: "Customizing Your Site",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li><strong>Site branding:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Logo.astro</code> to change your site name/logo</li>
+      <li><strong>Navigation:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> to modify menu items</li>
+      <li><strong>Footer links:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Footer.astro</code> for footer content</li>
+      <li><strong>Site metadata:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/components/BaseHead.astro</code> for SEO settings</li>
+      <li><strong>Colors & styling:</strong><br>
+          GOV.UK Design System colors are built-in, but you can customize in <code class="govuk-!-font-family-monospace">src/styles/</code></li>
+    </ol>`
+  }
+];
+---
+
+<BaseLayout title="Quick Start">
+    <Back link="/" />
+	<main class="govuk-main-wrapper app-main-class" id="main-content">
+		<h1 class="govuk-heading-xl">Quick Start Guide</h1>
+        <p class="govuk-body-l">Get up and running with your GDS Design System website.</p>
+        
+        <h2 class="govuk-heading-l">Getting Started</h2>
+        <Accordion id="getting-started" items={gettingStartedItems} />
+
+
+        <h2 class="govuk-heading-l">Next Steps</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Explore the <a class="govuk-link" href="/components">components demo page</a></li>
+          <li>Read the <a class="govuk-link" href="https://design-system.service.gov.uk/">GOV.UK Design System documentation</a></li>
+          <li>Check out the <a class="govuk-link" href="https://github.com/leowilkin/govuk-personal">GitHub repository</a></li>
+          <li>Deploy your site to <a class="govuk-link" href="https://pages.cloudflare.com/">Cloudflare Pages</a>, <a class="govuk-link" href="https://vercel.com/">Vercel</a>, or <a class="govuk-link" href="https://www.netlify.com/">Netlify</a></li>
+        </ul>
+	</main>
+</BaseLayout>

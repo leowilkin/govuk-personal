@@ -6,8 +6,7 @@ const { title, description } = Astro.props;
     <span class="govuk-details__summary-text">
       {title}
     </span>
-  </summary>
-  <div class="govuk-details__text">
-    {description}  
+  </summary>  
+  <div class="govuk-details__text" set:html={description}>
   </div>
 </details>

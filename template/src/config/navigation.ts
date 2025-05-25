@@ -25,13 +25,13 @@ export const navigation: NavigationItem[] = [
     href: "/about",
   },
   {
-    label: "Projects",
-    href: "/projects",
+    label: "Quick Start",
+    href: "/quickstart",
   },
   {
-    label: "Contact",
-    href: "/contact",
-  },
+    label: "Components",
+    href: "https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md",
+  }
 ];
 
 export function getNavigationWithActive(currentPath: string): NavigationItem[] {
@@ -54,21 +54,13 @@ export const footerLinks: FooterLink[] = [
     href: "/help",
   },
   {
-    label: "Cookies",
-    href: "/cookies",
-  },
-  {
     label: "Contact",
     href: "/contact",
   },
   {
-    label: "Terms and conditions",
-    href: "/terms",
-  },
-  {
-    label: "Privacy policy",
-    href: "/privacy",
-  },
+    label: "GitHub Repo",
+    href: "https://github.com/leowilkin/govuk-personal"
+  }
 ];
 
 // LOGO (in header) CONFIG
