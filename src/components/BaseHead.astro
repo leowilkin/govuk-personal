@@ -1,5 +1,6 @@
 ---
 import { ClientRouter } from "astro:transitions";
+import '../styles/govuk-frontend.min.css';
 const { title } = Astro.props;
 ---
 <head>
@@ -12,7 +13,6 @@ const { title } = Astro.props;
     <link rel="mask-icon" href="/assets/images/govuk-icon-mask.svg" color="blue">
     <link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png">
     <link rel="manifest" href="/assets/manifest.json">
-    <link rel="stylesheet" href="/src/styles/govuk-frontend.min.css">
     <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
     <style is:global>
         /* Override GOV.UK Frontend default font to Helvetica */
