@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Phase from "../components/Phase.astro";
-import Back from "../components/Back.astro";
+import Phase from "../components/govuk/Phase.astro";
+import NotificationBanner from "../components/govuk/NotificationBanner.astro";
+import Breadcrumbs from "../components/govuk/Breadcrumbs.astro";
 ---
 
 <BaseLayout title="Home">
@@ -9,5 +10,11 @@ import Back from "../components/Back.astro";
 	<main class="govuk-main-wrapper app-main-class" id="main-content">
 		<h1 class="govuk-heading-xl">Leo Wilkin</h1>
 		<p>Hey! My name is Leo, and this is my personal site.</p>
+		<NotificationBanner
+			title="Welcome to my site"
+			desc="This is a personal project to showcase my work and interests."
+			link="https://google.com"
+			linkdesc="Learn more"
+		/>
 	</main>
 </BaseLayout>

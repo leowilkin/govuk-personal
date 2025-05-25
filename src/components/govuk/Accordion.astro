@@ -1,0 +1,30 @@
+---
+export interface AccordionItem {
+  id: string;
+  title: string;
+  content: string;
+}
+
+export interface Props {
+  id?: string;
+  items: AccordionItem[];
+}
+
+const { id = 'accordion-default', items } = Astro.props;
+---
+<div class="govuk-accordion" data-module="govuk-accordion" id={id}>
+  {items.map((item, index) => (
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+          <span class="govuk-accordion__section-button" id={`${id}-heading-${index + 1}`}>
+            {item.title}
+          </span>
+        </h2>
+      </div>
+      <div id={`${id}-content-${index + 1}`} class="govuk-accordion__section-content">
+        <p class="govuk-body">{item.content}</p>
+      </div>
+    </div>
+  ))}
+</div>
