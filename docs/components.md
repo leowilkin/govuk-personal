@@ -2,11 +2,11 @@
 
 All default GOV.UK Design System Components are housed in `src/components/govuk`.
 
-For reference, view [this GDS link](https://design-system.service.gov.uk/components/)
+For reference, view [this GDS link](https://design-system.service.gov.uk/components/).
 
 View a list of all the components supported by this implementation, and the links to their relevant GDS Docs page.
 
-| Name                |                 Status                | Links                                                                       | Comments                                                                                     |
+| Name                |                 Status                | Link                                                                       | Comments                                                                                     |
 |---------------------|:-------------------------------------:|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Accordion           | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/accordion/)           |                                                                                              |
 | Back Link           | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/back-link/)           |                                                                                              |
