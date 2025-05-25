@@ -1,36 +1,20 @@
-# create-govuk-personal
+# GOV.UK, but it's personal
 
-Create a personal website using the GOV.UK Design System with Astro.
+Are you a well-seasoned open-sourcerer and love the work that the UK Gov Digital Services do?
+
+Are you also like me and have a bit of a _thing_ for the GOV.UK Design System?
+
+The only sane solution would be to turn GDS's production Design System kit into a personal website.
 
 ## Quick Start
 
 ```bash
-npm create govuk-personal@latest my-govuk-site
+npm create govuk-personal@latest
 cd my-govuk-site
 npm run dev
 ```
 
-## What you get
-
-- ⚡ **Astro** - Fast, modern static site generator
-- 🏛️ **GOV.UK Design System** - Professional, accessible components
-- 📱 **Mobile-first** - Responsive design out of the box
-- ♿ **Accessible** - Built with accessibility in mind
-- 🎨 **Customizable** - Easy to modify and extend
-
-## Components Included
-
-- Breadcrumbs
-- Pagination  
-- Accordion
-- Details
-- Notification Banner
-- Phase Banner
-- Warning Text
-- Back Link
-- Inset Text
-
-## Why it can't look exactly like gov.uk
+## Why it can't look exactly like GOV.UK
 
 > If your service is not on a service.gov.uk domain, you cannot use the GOV.UK crown logo.
 
@@ -38,13 +22,13 @@ This template uses a custom logo placeholder.
 
 > You also will not be able to use the New Transport font. Use the Helvetica or Arial CSS font stacks instead.
 
-Helvetica has been substituted for GDS Transport.
+GDS Transport has been substituted for Helvetica.
 
 [Source: gov.uk](https://www.gov.uk/service-manual/design/services-for-government-users)
 
 ## Documentation
 
-Visit the [documentation](https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md) for detailed guides on using the components and customizing your site.
+Visit the [documentation](https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md) for detailed guides on using the components on your site.
 
 ## The Legal Bits
 

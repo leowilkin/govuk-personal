@@ -53,7 +53,6 @@ async function main() {
   const targetDir = path.resolve(process.cwd(), response.projectName);
   const templateDir = path.join(__dirname, 'template');
 
-  // Check if directory already exists
   if (fs.existsSync(targetDir)) {
     console.error(`❌ Directory ${response.projectName} already exists!`);
     process.exit(1);
@@ -61,10 +60,8 @@ async function main() {
 
   console.log(`\n📁 Creating project in ${targetDir}...`);
 
-  // Copy template files
   copyDir(templateDir, targetDir);
 
-  // Update package.json with user input
   const packageJsonPath = path.join(targetDir, 'package.json');
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, 'utf8'));
   
@@ -77,7 +74,6 @@ async function main() {
 
   console.log('✅ Project files copied');
 
-  // Initialize git if requested
   if (response.useGit) {
     try {
       const { execSync } = await import('child_process');
@@ -88,7 +84,6 @@ async function main() {
     }
   }
 
-  // Install dependencies if requested
   if (response.installDeps) {
     console.log('\n📦 Installing dependencies...');
     try {

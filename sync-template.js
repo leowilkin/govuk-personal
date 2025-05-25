@@ -8,7 +8,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 console.log('🔄 Syncing template with main project...');
 
-// Files and directories to exclude from sync
 const excludeList = [
   '.git',
   'node_modules', 
@@ -50,16 +49,13 @@ function copyDir(src, dest) {
   }
 }
 
-// Clear template directory first
 const templateDir = path.join(__dirname, 'template');
 if (fs.existsSync(templateDir)) {
   fs.rmSync(templateDir, { recursive: true });
 }
 
-// Copy files
 copyDir(__dirname, templateDir);
 
-// Update template package.json
 const templatePackageJson = path.join(templateDir, 'package.json');
 const packageData = {
   "name": "govuk-personal-site",

@@ -30,16 +30,23 @@
     "index.js"
   ],
   "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro",
     "sync-template": "node sync-template.js",
     "test-create": "node index.js"
   },
   "dependencies": {
-    "prompts": "^2.4.2"
-  },
-  "peerDependencies": {
+    "astro": "^5.8.0",
     "govuk-frontend": "^5.10.1",
     "nunjucks": "^3.2.4",
     "sass": "^1.89.0",
-    "astro": "^5.8.0"
+    "prompts": "^2.4.2"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.2"
   }
 }
