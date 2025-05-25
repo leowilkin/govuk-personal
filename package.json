@@ -1,8 +1,15 @@
 {
   "name": "create-govuk-personal",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create a personal website using the GOV.UK Design System with Astro",
-  "keywords": ["astro", "govuk", "design-system", "template", "create", "starter"],
+  "keywords": [
+    "astro",
+    "govuk",
+    "design-system",
+    "template",
+    "create",
+    "starter"
+  ],
   "homepage": "https://github.com/leowilkin/govuk-personal#readme",
   "bugs": {
     "url": "https://github.com/leowilkin/govuk-personal/issues"
