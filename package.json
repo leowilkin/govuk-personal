@@ -1,0 +1,25 @@
+{
+  "name": "govuk-personal",
+  "version": "0.0.1",
+  "description": "love @alphagov so much that you'd use their design system on a personal website? now you can :D",
+  "homepage": "https://github.com/leowilkin/govuk-personal#readme",
+  "bugs": {
+    "url": "https://github.com/leowilkin/govuk-personal/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leowilkin/govuk-personal.git"
+  },
+  "license": "MIT",
+  "author": "Leo W",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "govuk-frontend": "^5.10.1",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.89.0"
+  }
+}
