@@ -1,4 +1,4 @@
-# GOV.UK, but it's personal this time
+# GOV.UK, but it's personal this time.
 
 Are you a well-seasoned open-sourcerer and love the work that the UK Gov Digital Services do?
 
@@ -15,6 +15,8 @@ Replaced to use a custom logo, or text.
 > You also will not be able to use the New Transport font. Use the Helvetica or Arial CSS font stacks instead.
 
 WHY! That's the best bit :( Helvetica has been substituted.
+
+> [gov.uk](https://www.gov.uk/service-manual/design/services-for-government-users), retrieved 25/05/2025.
 
 ## Components!
 
