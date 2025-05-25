@@ -14,13 +14,22 @@ Replaced to use a custom logo, or text.
 
 > You also will not be able to use the New Transport font. Use the Helvetica or Arial CSS font stacks instead.
 
-WHY! That's the best bit :( Helvetica has been substituted.
+Helvetica has been substituted for GDS Transport.
 
-> [gov.uk](https://www.gov.uk/service-manual/design/services-for-government-users), retrieved 25/05/2025.
+[gov.uk](https://www.gov.uk/service-manual/design/services-for-government-users), retrieved 25/05/2025.
 
-## Components!
+## Components
 
-Yes! This implementation fully supports (in places) GOV.UK Design System components :) Find out more [here](https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md).
+Yes! This implementation fully supports (in places) GOV.UK Design System components. Find out more [here](https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md).
+
+## Using this project
+
+1. Clone via GitHub, or fork this repo.
+2. If not already installed, get NPM and Node.JS.
+3. cd into the directory, and run `npm i`
+4. Add your pages under `src/pages/`, and then run `npm run dev`
+
+Have fun!
 
 ## The Legal Bits
 
