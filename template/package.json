@@ -1,0 +1,23 @@
+{
+  "name": "govuk-personal-site",
+  "version": "0.0.1",
+  "description": "A personal website using the GOV.UK Design System",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.8.0",
+    "govuk-frontend": "^5.10.1",
+    "nunjucks": "^3.2.4",
+    "sass": "^1.89.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.2"
+  }
+}

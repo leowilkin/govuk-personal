@@ -1,0 +1,37 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Accordion from "../components/govuk/Accordion.astro";
+
+const accordionItems = [
+  {
+    id: 'email',
+    title: 'Email',
+    content: 'mail@example.com'
+  },
+  {
+    id: 'linkedin',
+    title: 'LinkedIn', 
+    content: 'linkedin.com/in/yourprofile'
+  },
+  {
+    id: 'github',
+    title: 'GitHub',
+    content: 'github.com/yourusername'
+  }
+];
+---
+
+<BaseLayout title="Contact">
+	<main class="govuk-main-wrapper app-main-class" id="main-content">
+		<h1 class="govuk-heading-xl">Contact Me</h1>
+		<p class="govuk-body-l">Get in touch for opportunities or collaborations.</p>
+		
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-two-thirds">
+				<h2 class="govuk-heading-m">Contact Information</h2>
+				<p class="govuk-body">You can reach me through the following channels:</p>
+			</div>
+		</div>
+        <Accordion items={accordionItems} />
+	</main>
+</BaseLayout>

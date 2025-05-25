@@ -1,0 +1,41 @@
+---
+import { ClientRouter } from "astro:transitions";
+const { title } = Astro.props;
+---
+<head>
+    <meta charset="utf-8">
+    <title>{title}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="blue">
+    <link rel="icon" sizes="48x48" href="/assets/images/favicon.ico">
+    <link rel="icon" sizes="any" href="/assets/images/favicon.svg" type="image/svg+xml">
+    <link rel="mask-icon" href="/assets/images/govuk-icon-mask.svg" color="blue">
+    <link rel="apple-touch-icon" href="/assets/images/govuk-icon-180.png">
+    <link rel="manifest" href="/assets/manifest.json">
+    <link rel="stylesheet" href="/src/styles/govuk-frontend.min.css">
+    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png">
+    <style is:global>
+        /* Override GOV.UK Frontend default font to Helvetica */
+        html.govuk-template,
+        body.govuk-template__body,
+        button, /* Ensure buttons use Helvetica */
+        input,  /* Ensure form inputs use Helvetica */
+        select, /* Ensure select elements use Helvetica */
+        textarea, /* Ensure textareas use Helvetica */
+        .govuk-body, /* Base body text */
+        .govuk-heading-xl, /* Headings */
+        .govuk-heading-l,
+        .govuk-heading-m,
+        .govuk-heading-s,
+        .govuk-link, /* Links */
+        .govuk-button /* GOV.UK styled buttons */
+            {
+            font-family: 'Helvetica', Arial, sans-serif !important;
+        }
+        /* Override for elements that might specifically use the tabular version of GDS Transport */
+        [class*="govuk-!-font-tabular"] {
+            font-family: 'Helvetica', Arial, sans-serif !important;
+        }
+    </style>
+    <ClientRouter />
+</head>

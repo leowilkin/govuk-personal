@@ -1,0 +1,41 @@
+---
+import { logoConfig } from "../config/navigation";
+---
+
+<div class="govuk-header__logo">
+  <a href={logoConfig.href} class="govuk-header__link govuk-header__link--homepage">
+    {logoConfig.customImage ? (
+      <img 
+        src={logoConfig.customImage.src}
+        alt={logoConfig.customImage.alt}
+        width={logoConfig.customImage.width || 120}
+        height={logoConfig.customImage.height || 30}
+        class="govuk-header__logotype govuk-header__logotype--image"
+      />
+    ) : (
+      <span class="govuk-header__logotype govuk-header__logotype--text" aria-label={logoConfig.text}>
+        {logoConfig.text}
+      </span>
+    )}
+  </a>
+</div>
+
+<style>
+  .govuk-header__logotype--text {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Arial", "Helvetica", sans-serif;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    display: inline-block;
+    margin-top: 5px;
+  }
+  
+  .govuk-header__link--homepage:focus .govuk-header__logotype--text,
+  .govuk-header__link--homepage:hover .govuk-header__logotype--text {
+    text-decoration: underline;
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    text-underline-offset: .1em;
+  }
+</style>

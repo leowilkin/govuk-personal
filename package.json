@@ -1,7 +1,8 @@
 {
-  "name": "govuk-personal",
-  "version": "0.0.1",
-  "description": "love @alphagov so much that you'd use their design system on a personal website? now you can :D",
+  "name": "create-govuk-personal",
+  "version": "1.0.0",
+  "description": "Create a personal website using the GOV.UK Design System with Astro",
+  "keywords": ["astro", "govuk", "design-system", "template", "create", "starter"],
   "homepage": "https://github.com/leowilkin/govuk-personal#readme",
   "bugs": {
     "url": "https://github.com/leowilkin/govuk-personal/issues"
@@ -12,15 +13,23 @@
   },
   "license": "MIT",
   "author": "Leo W",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
+  "bin": {
+    "create-govuk-personal": "./index.js"
+  },
+  "files": [
+    "template/",
+    "index.js"
+  ],
   "scripts": {
-    "dev": "astro dev",
-    "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "sync-template": "node sync-template.js",
+    "test-create": "node index.js"
   },
   "dependencies": {
+    "prompts": "^2.4.2"
+  },
+  "peerDependencies": {
     "govuk-frontend": "^5.10.1",
     "nunjucks": "^3.2.4",
     "sass": "^1.89.0",

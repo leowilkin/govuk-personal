@@ -1,0 +1,38 @@
+---
+import BaseHead from "../components/BaseHead.astro"
+import Navigation from "../components/Navigation.astro"
+import Footer from "../components/Footer.astro"
+import Logo from "../components/Logo.astro"
+import { siteConfig } from "../config/navigation"
+
+const { title } = Astro.props;
+const formattedTitle = `${title}${siteConfig.titleSeparator}${siteConfig.name}`;
+---
+
+<html lang="en" class="govuk-template app-html-class">
+<BaseHead title={formattedTitle}/>
+<body class="govuk-template__body app-body-class">
+  <script>
+    document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
+  </script>
+  <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>  <header class="govuk-header" data-module="govuk-header">
+    <div class="govuk-header__container govuk-width-container app-width-container">
+      <Logo />      
+      <div class="govuk-header__content">
+        <Navigation currentPath={Astro.url.pathname} />
+      </div>
+    </div>  </header>
+  <div class="govuk-width-container app-width-container">
+    <slot/>
+  </div>
+  <Footer />
+  <script type="module" src="/src/scripts/govuk-frontend.min.js"></script>
+  <script type="module">
+    import {
+      initAll
+    } from '/src/scripts/govuk-frontend.min.js'
+    initAll()
+  </script>
+</body>
+
+</html>
