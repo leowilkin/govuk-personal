@@ -4,19 +4,19 @@ import Accordion from "../components/govuk/Accordion.astro";
 
 const accordionItems = [
   {
-    id: 'web-writing',
-    title: 'Writing well for the web',
-    content: 'This is the content for Writing well for the web.'
+    id: 'email',
+    title: 'Email',
+    content: 'mail@example.com'
   },
   {
-    id: 'specialists',
-    title: 'Writing well for specialists', 
-    content: 'This is the content for Writing well for specialists.'
+    id: 'linkedin',
+    title: 'LinkedIn', 
+    content: 'linkedin.com/in/yourprofile'
   },
   {
-    id: 'audience',
-    title: 'Know your audience',
-    content: 'This is the content for Know your audience.'
+    id: 'github',
+    title: 'GitHub',
+    content: 'github.com/yourusername'
   }
 ];
 ---
@@ -30,11 +30,6 @@ const accordionItems = [
 			<div class="govuk-grid-column-two-thirds">
 				<h2 class="govuk-heading-m">Contact Information</h2>
 				<p class="govuk-body">You can reach me through the following channels:</p>
-				<ul class="govuk-list govuk-list--bullet">
-					<li>Email: your.email@example.com</li>
-					<li>LinkedIn: Your LinkedIn Profile</li>
-					<li>GitHub: Your GitHub Profile</li>
-				</ul>
 			</div>
 		</div>
         <Accordion items={accordionItems} />

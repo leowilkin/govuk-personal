@@ -2,18 +2,17 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Phase from "../components/govuk/Phase.astro";
 import NotificationBanner from "../components/govuk/NotificationBanner.astro";
-import Breadcrumbs from "../components/govuk/Breadcrumbs.astro";
 ---
 
 <BaseLayout title="Home">
-	<Phase title="Alpha" text="This is an Alpha service." />
+	<Phase title="Beta" text="This is an actively developed project." />
 	<main class="govuk-main-wrapper app-main-class" id="main-content">
-		<h1 class="govuk-heading-xl">Leo Wilkin</h1>
-		<p>Hey! My name is Leo, and this is my personal site.</p>
+		<h1 class="govuk-heading-xl">GDS Design System - Personal Edition</h1>
+		<p>Here's a demo of the leowilkin/govuk-personal implementation of GDS's GOV.UK Frontend.</p>
 		<NotificationBanner
-			title="Welcome to my site"
-			desc="This is a personal project to showcase my work and interests."
-			link="https://google.com"
+			title="This is not maintained, or supported by the GDS team."
+			desc="This is a personal project to demonstrate the GDS Design System in a personal context."
+			link="https://github.com/leowilkin/govuk-personal"
 			linkdesc="Learn more"
 		/>
 	</main>
