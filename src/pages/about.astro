@@ -1,11 +1,22 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Button from "../components/govuk/Button.astro";
 ---
 
 <BaseLayout title="About">
 	<main class="govuk-main-wrapper app-main-class" id="main-content">
-		<h1 class="govuk-heading-xl">About Me</h1>
-		<p class="govuk-body-l">Learn more about my background and experience.</p>
-		<p class="govuk-body">This is the about page content. Add your biography, skills, and other information here.</p>
+		<h1 class="govuk-heading-xl">About</h1>
+		<h2 class="govuk-heading">Overview</h2>
+		<p class="govuk-body">Are you a well-seasoned open-sourcerer and love the work that the UK Gov Digital Services do?</p>
+		<p class="govuk-body">Are you also like me and have a bit of a <i>thing</i> for the GOV.UK Design System?</p>
+		<p class="govuk-body">The only sane solution would be to turn GDS's production Design System kit into a personal website templating kit.</p>
+		
+		<h2 class="govuk-heading">Tech Stack</h2>
+		<p class="govuk-body">This is built using: Astro Components and Layouts, GOV.UK Design System Frontend's JS & CSS, and a lot of tape.</p>
+		<p class="govuk-body">Because of this, not all components from the <a class="govuk-service-navigation__link" href="https://design-system.service.gov.uk/components/">GOV.UK kit</a> are natively supported.</p>
+		<p class="govuk-body">Thus, you have to manually create a component that can be expanded through Astro Components.</p>
+		
+		<Button title="Quick Start Guide" link="/quickstart" />
+		<Button title="View Components" link="https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md" />
 	</main>
 </BaseLayout>

@@ -2,18 +2,22 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Phase from "../components/govuk/Phase.astro";
 import NotificationBanner from "../components/govuk/NotificationBanner.astro";
+import Button from "../components/govuk/Button.astro";
 ---
 
 <BaseLayout title="Home">
 	<Phase title="Beta" text="This is an actively developed project." />
 	<main class="govuk-main-wrapper app-main-class" id="main-content">
 		<h1 class="govuk-heading-xl">GDS Design System - Personal Edition</h1>
-		<p>Here's a demo of the leowilkin/govuk-personal implementation of GDS's GOV.UK Frontend.</p>
+		<p class="govuk-body">Are you a well-seasoned open-sourcerer and love the work that the UK Gov Digital Services do?</p>
+		<p class="govuk-body">Are you also like me and have a bit of a <i>thing</i> for the GOV.UK Design System?</p>
+		<p class="govuk-body">The only sane solution would be to turn GDS's production Design System kit into a personal website templating kit.</p>
 		<NotificationBanner
 			title="This is not maintained, or supported by the GDS team."
-			desc="This is a personal project to demonstrate the GDS Design System in a personal context."
+			desc="This is an independent, personal project to demonstrate the GDS Design System in a personal context."
 			link="https://github.com/leowilkin/govuk-personal"
 			linkdesc="Learn more"
 		/>
+		<Button title="Read the documentation" link="/about" />
 	</main>
 </BaseLayout>

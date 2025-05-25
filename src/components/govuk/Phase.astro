@@ -5,9 +5,8 @@ const { title, text } = Astro.props;
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
           {title}
-        </strong>
-        <span class="govuk-phase-banner__text">
-          {text}
+        </strong>        
+        <span class="govuk-phase-banner__text" set:html={text}>
         </span>
       </p>
     </div>

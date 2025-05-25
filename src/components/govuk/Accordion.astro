@@ -21,9 +21,9 @@ const { id = 'accordion-default', items } = Astro.props;
             {item.title}
           </span>
         </h2>
-      </div>
+      </div>      
       <div id={`${id}-content-${index + 1}`} class="govuk-accordion__section-content">
-        <p class="govuk-body">{item.content}</p>
+        <div class="govuk-body" set:html={item.content}></div>
       </div>
     </div>
   ))}
