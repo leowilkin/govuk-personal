@@ -1,0 +1,28 @@
+---
+export interface Props {
+  title?: string;
+  id?: string;
+  tabs: Array<{
+    title: string;
+    id: string;
+  }>;
+}
+
+const { title = "Contents", id = "tabs-default", tabs } = Astro.props;
+---
+
+<div class="govuk-tabs" data-module="govuk-tabs" id={id}>
+  <h2 class="govuk-tabs__title">
+    {title}
+  </h2>
+  <ul class="govuk-tabs__list">
+    {tabs.map((tab, index) => (
+      <li class={`govuk-tabs__list-item ${index === 0 ? 'govuk-tabs__list-item--selected' : ''}`}>
+        <a class="govuk-tabs__tab" href={`#${tab.id}`}>
+          {tab.title}
+        </a>
+      </li>
+    ))}
+  </ul>
+  <slot />
+</div>

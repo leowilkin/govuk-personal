@@ -34,7 +34,7 @@ async function main() {
     {
       type: 'confirm',
       name: 'useGit',
-      message: 'Initialize git repository?',
+      message: 'Initialise git repository?',
       initial: true
     },
     {
@@ -78,9 +78,9 @@ async function main() {
     try {
       const { execSync } = await import('child_process');
       execSync('git init', { cwd: targetDir, stdio: 'ignore' });
-      console.log('✅ Git repository initialized');
+      console.log('✅ Git repository initialised');
     } catch (error) {
-      console.log('⚠️  Could not initialize git repository');
+      console.log('⚠️  Could not initialise git repository');
     }
   }
 

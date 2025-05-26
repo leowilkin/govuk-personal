@@ -1,0 +1,13 @@
+---
+export interface Props {
+  title: string;
+  id: string;
+  isFirst?: boolean;
+}
+
+const { title, id, isFirst = false } = Astro.props;
+---
+
+<div class={`govuk-tabs__panel ${isFirst ? '' : 'govuk-tabs__panel--hidden'}`} id={id}>
+  <slot />
+</div>

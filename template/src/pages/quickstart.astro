@@ -2,8 +2,10 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Back from "../components/govuk/Back.astro";
 import Accordion from "../components/govuk/Accordion.astro";
+import TabGroup from "../components/govuk/TabGroup.astro";
+import Tab from "../components/govuk/Tab.astro";
 
-const gettingStartedItems = [
+const macos = [
   {
     id: "installation",
     title: "Installing Dependencies",
@@ -75,7 +77,7 @@ const gettingStartedItems = [
         <ul>
           <li>Give it a name (e.g. <code class="govuk-!-font-family-monospace">my-project</code>)</li>
           <li>Leave it public or private depending on your needs</li>
-          <li><strong>Do not</strong> initialize with a README, .gitignore, or license</li>
+          <li><strong>Do not</strong> initialise with a README, .gitignore, or license</li>
           <li>Click <strong>Create repository</strong></li>
         </ul>
       </li>
@@ -117,20 +119,20 @@ const gettingStartedItems = [
     id: "project-structure",
     title: "Project Structure",
     content: `<pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">src/
-├── components/           # Reusable components
-│   ├── govuk/           # GOV.UK Design System components  
-│   ├── BaseHead.astro   # HTML head component
-│   ├── Footer.astro     # Site footer
-│   └── Navigation.astro # Site navigation
-├── layouts/             # Page layouts
-│   └── BaseLayout.astro # Main page wrapper
-├── pages/              # Your website pages (auto-routing)
-│   ├── index.astro     # Homepage (/)
-│   ├── about.astro     # About page (/about)
-│   └── [other pages]   # Add more pages here
-├── config/             # Site configuration
-│   └── navigation.ts   # Navigation menu setup
-└── styles/             # CSS and styling</pre>`
+    ├── components/           # Reusable components
+    │   ├── govuk/           # GOV.UK Design System components  
+    │   ├── BaseHead.astro   # HTML head component
+    │   ├── Footer.astro     # Site footer
+    │   └── Navigation.astro # Site navigation
+    ├── layouts/             # Page layouts
+    │   └── BaseLayout.astro # Main page wrapper
+    ├── pages/              # Your website pages (auto-routing)
+    │   ├── index.astro     # Homepage (/)
+    │   ├── about.astro     # About page (/about)
+    │   └── [other pages]   # Add more pages here
+    ├── config/             # Site configuration
+    │   └── navigation.ts   # Navigation menu setup
+    └── styles/             # CSS and styling</pre>`
   },
   {
     id: "adding-pages",
@@ -140,21 +142,21 @@ const gettingStartedItems = [
           Example: <code class="govuk-!-font-family-monospace">src/pages/services.astro</code></li>
       <li>Use the BaseLayout:
           <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; margin: 8px 0; border-left: 4px solid #b1b4b6;">---
-import BaseLayout from "../layouts/BaseLayout.astro";
----
-&lt;BaseLayout title="Services"&gt;
-  &lt;main class="govuk-main-wrapper" id="main-content"&gt;
-    &lt;h1 class="govuk-heading-xl"&gt;Services&lt;/h1&gt;
-    &lt;p class="govuk-body"&gt;Your content here...&lt;/p&gt;
-  &lt;/main&gt;
-&lt;/BaseLayout&gt;</pre></li>
-      <li>The page will automatically be available at <code class="govuk-!-font-family-monospace">/services</code></li>
-      <li>Add to navigation in <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> if needed</li>
+          import BaseLayout from "../layouts/BaseLayout.astro";
+          ---
+          &lt;BaseLayout title="Services"&gt;
+            &lt;main class="govuk-main-wrapper" id="main-content"&gt;
+              &lt;h1 class="govuk-heading-xl"&gt;Services&lt;/h1&gt;
+              &lt;p class="govuk-body"&gt;Your content here...&lt;/p&gt;
+            &lt;/main&gt;
+          &lt;/BaseLayout&gt;</pre></li>
+                <li>The page will automatically be available at <code class="govuk-!-font-family-monospace">/services</code></li>
+                <li>Add to navigation in <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> if needed</li>
     </ol>`
   },
   {
-    id: "customization",
-    title: "Customizing Your Site",
+    id: "customisation",
+    title: "Customising Your Site",
     content: `<ol class="govuk-list govuk-list--number">
       <li><strong>Site branding:</strong><br>
           Edit <code class="govuk-!-font-family-monospace">src/components/Logo.astro</code> to change your site name/logo</li>
@@ -165,21 +167,322 @@ import BaseLayout from "../layouts/BaseLayout.astro";
       <li><strong>Site metadata:</strong><br>
           Update <code class="govuk-!-font-family-monospace">src/components/BaseHead.astro</code> for SEO settings</li>
       <li><strong>Colors & styling:</strong><br>
-          GOV.UK Design System colors are built-in, but you can customize in <code class="govuk-!-font-family-monospace">src/styles/</code></li>
+          GOV.UK Design System colors are built-in, but you can customise in <code class="govuk-!-font-family-monospace">src/styles/</code></li>
     </ol>`
   }
 ];
+const windows = [
+  {
+    id: "installation",
+    title: "Installing Dependencies",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>Download and install <strong>Node.js</strong> from <a href="https://nodejs.org/" class="govuk-link" target="_blank">nodejs.org</a>.<br>
+        Choose the LTS (Long Term Support) version.</li>
+      <li>Open <strong>Command Prompt</strong> or <strong>PowerShell</strong> as Administrator:<br>
+        Press <strong>Win + X</strong> and select "Windows PowerShell (Admin)" or "Command Prompt (Admin)"</li>
+      <li>Verify Node.js and npm are installed:<br>
+        <code class="govuk-!-font-family-monospace">node -v</code><br>
+        <code class="govuk-!-font-family-monospace">npm -v</code></li>
+      <li>Install or update npm to the latest version:<br>
+        <code class="govuk-!-font-family-monospace">npm install -g npm@latest</code></li>
+      <li>Create a new project using the GOV.UK Personal template:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code></li>
+      <li>Follow the prompts to set up your project</li>
+      <li>Navigate to your project folder:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code></li>
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code></li>
+      <li>Start the development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code></li>
+      <li>Open your browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code></li>
+    </ol>`
+  },
+  {
+    id: "creating-repo",
+    title: "Creating the Repository",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>If you don’t already have <strong>Visual Studio Code</strong> installed, download it from 
+        <a href="https://code.visualstudio.com/" class="govuk-link" target="_blank">code.visualstudio.com</a>.<br>
+        Open the downloaded file and complete the setup, adding VS Code to PATH.
+      </li>
+
+      <li>Now you can open folders in VS Code from Terminal like this:<br>
+        <code class="govuk-!-font-family-monospace">code .</code>
+      </li>
+
+      <li>Go to <a href="https://github.com/new" class="govuk-link" target="_blank">github.com/new</a> and create a new repository:
+        <ul>
+          <li>Give it a name (e.g. <code class="govuk-!-font-family-monospace">my-project</code>)</li>
+          <li>Leave it public or private depending on your needs</li>
+          <li><strong>Do not</strong> initialise with a README, .gitignore, or license</li>
+          <li>Click <strong>Create repository</strong></li>
+        </ul>
+      </li>
+
+      <li>Open <strong>GitHub Desktop</strong>. If you don’t have it yet, download it from 
+        <a href="https://desktop.github.com/" class="govuk-link" target="_blank">desktop.github.com</a>.
+      </li>
+
+      <li>In GitHub Desktop, click <strong>Clone a repository</strong>, select the one you just created, and choose where to save it on your computer.</li>
+
+      <li>Once cloned, click <strong>Open in Visual Studio Code</strong>. (If not available, you can manually open VS Code and go to <code class="govuk-!-font-family-monospace">File → Open</code> to choose the folder.)</li>
+
+      <li>In the VS Code terminal (View → Terminal), run the following to scaffold a new GOV.UK Personal project inside the folder:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code>
+      </li>
+
+      <li>Follow the prompts (e.g. project name, template options). This creates a new directory for your project.</li>
+
+      <li>Change into the new project folder:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code>
+      </li>
+
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code>
+      </li>
+
+      <li>Start the development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code>
+      </li>
+
+      <li>Open your browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code>
+      </li>
+
+      <li>Start editing files in <code class="govuk-!-font-family-monospace">src/pages/</code> and see changes instantly!</li>
+    </ol>`
+  }, 
+  {
+    id: "project-structure",
+    title: "Project Structure",
+    content: `<pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">src/
+    ├── components/           # Reusable components
+    │   ├── govuk/           # GOV.UK Design System components  
+    │   ├── BaseHead.astro   # HTML head component
+    │   ├── Footer.astro     # Site footer
+    │   └── Navigation.astro # Site navigation
+    ├── layouts/             # Page layouts
+    │   └── BaseLayout.astro # Main page wrapper
+    ├── pages/              # Your website pages (auto-routing)
+    │   ├── index.astro     # Homepage (/)
+    │   ├── about.astro     # About page (/about)
+    │   └── [other pages]   # Add more pages here
+    ├── config/             # Site configuration
+    │   └── navigation.ts   # Navigation menu setup
+    └── styles/             # CSS and styling</pre>`
+  },
+  {
+    id: "adding-pages",
+    title: "Adding New Pages",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>Create a new .astro file in <code class="govuk-!-font-family-monospace">src/pages/</code><br>
+          Example: <code class="govuk-!-font-family-monospace">src/pages/services.astro</code></li>
+      <li>Use the BaseLayout:
+          <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; margin: 8px 0; border-left: 4px solid #b1b4b6;">---
+          import BaseLayout from "../layouts/BaseLayout.astro";
+          ---
+          &lt;BaseLayout title="Services"&gt;
+            &lt;main class="govuk-main-wrapper" id="main-content"&gt;
+              &lt;h1 class="govuk-heading-xl"&gt;Services&lt;/h1&gt;
+              &lt;p class="govuk-body"&gt;Your content here...&lt;/p&gt;
+            &lt;/main&gt;
+          &lt;/BaseLayout&gt;</pre></li>
+                <li>The page will automatically be available at <code class="govuk-!-font-family-monospace">/services</code></li>
+                <li>Add to navigation in <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> if needed</li>
+    </ol>`
+  },
+  {
+    id: "customisation",
+    title: "Customising Your Site",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li><strong>Site branding:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Logo.astro</code> to change your site name/logo</li>
+      <li><strong>Navigation:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> to modify menu items</li>
+      <li><strong>Footer links:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Footer.astro</code> for footer content</li>
+      <li><strong>Site metadata:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/components/BaseHead.astro</code> for SEO settings</li>
+      <li><strong>Colors & styling:</strong><br>
+          GOV.UK Design System colors are built-in, but you can customise in <code class="govuk-!-font-family-monospace">src/styles/</code></li>
+    </ol>`
+  }
+];
+
+const linux = [
+  {
+    id: "installation",
+    title: "Installing Dependencies",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>Install Node.js using your package manager:<br>
+        <strong>Ubuntu/Debian:</strong><br>
+        <code class="govuk-!-font-family-monospace">curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -</code><br>
+        <code class="govuk-!-font-family-monospace">sudo apt-get install -y nodejs</code><br><br>
+        <strong>CentOS/RHEL/Fedora:</strong><br>
+        <code class="govuk-!-font-family-monospace">curl -fsSL https://rpm.nodesource.com/setup_lts.x | sudo bash -</code><br>
+        <code class="govuk-!-font-family-monospace">sudo yum install -y nodejs</code><br><br>
+        <strong>Arch Linux:</strong><br>
+        <code class="govuk-!-font-family-monospace">sudo pacman -S nodejs npm</code></li>
+      <li>Verify installation:<br>
+        <code class="govuk-!-font-family-monospace">node -v</code><br>
+        <code class="govuk-!-font-family-monospace">npm -v</code></li>
+      <li>Create a new project:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code></li>
+      <li>Navigate to your project:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code></li>
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code></li>
+      <li>Start development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code></li>
+      <li>Open browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code></li>
+    </ol>`
+  },
+  {
+    id: "creating-repo",
+    title: "Creating the Repository",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>If you don’t already have <strong>Visual Studio Code</strong> installed, download it from 
+        <a href="https://code.visualstudio.com/" class="govuk-link" target="_blank">code.visualstudio.com</a>.<br>
+        Open the downloaded file and drag <code class="govuk-!-font-family-monospace">Visual Studio Code.app</code> into your <code class="govuk-!-font-family-monospace">Applications</code> folder.
+      </li>
+
+      <li>To make VS Code available from the Terminal as <code class="govuk-!-font-family-monospace">code</code>, open VS Code and press <strong>Cmd + Shift + P</strong>, then type:<br>
+        <code class="govuk-!-font-family-monospace">Shell Command: Install 'code' command in PATH</code> and hit Enter.
+      </li>
+
+      <li>Now you can open folders in VS Code from Terminal like this:<br>
+        <code class="govuk-!-font-family-monospace">code .</code>
+      </li>
+
+      <li>Go to <a href="https://github.com/new" class="govuk-link" target="_blank">github.com/new</a> and create a new repository:
+        <ul>
+          <li>Give it a name (e.g. <code class="govuk-!-font-family-monospace">my-project</code>)</li>
+          <li>Leave it public or private depending on your needs</li>
+          <li><strong>Do not</strong> initialise with a README, .gitignore, or license</li>
+          <li>Click <strong>Create repository</strong></li>
+        </ul>
+      </li>
+
+      <li>Open <strong>GitHub Desktop</strong>. If you don’t have it yet, download it from 
+        <a href="https://desktop.github.com/" class="govuk-link" target="_blank">desktop.github.com</a>.
+      </li>
+
+      <li>In GitHub Desktop, click <strong>Clone a repository</strong>, select the one you just created, and choose where to save it on your computer.</li>
+
+      <li>Once cloned, click <strong>Open in Visual Studio Code</strong>. (If not available, you can manually open VS Code and go to <code class="govuk-!-font-family-monospace">File → Open</code> to choose the folder.)</li>
+
+      <li>In the VS Code terminal (View → Terminal), run the following to scaffold a new GOV.UK Personal project inside the folder:<br>
+        <code class="govuk-!-font-family-monospace">npm create govuk-personal@latest</code>
+      </li>
+
+      <li>Follow the prompts (e.g. project name, template options). This creates a new directory for your project.</li>
+
+      <li>Change into the new project folder:<br>
+        <code class="govuk-!-font-family-monospace">cd your-project-name</code>
+      </li>
+
+      <li>Install dependencies:<br>
+        <code class="govuk-!-font-family-monospace">npm install</code>
+      </li>
+
+      <li>Start the development server:<br>
+        <code class="govuk-!-font-family-monospace">npm run dev</code>
+      </li>
+
+      <li>Open your browser to:<br>
+        <code class="govuk-!-font-family-monospace">http://localhost:4321</code>
+      </li>
+
+      <li>Start editing files in <code class="govuk-!-font-family-monospace">src/pages/</code> and see changes instantly!</li>
+    </ol>`
+  }, 
+  {
+    id: "project-structure",
+    title: "Project Structure",
+    content: `<pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">src/
+    ├── components/           # Reusable components
+    │   ├── govuk/           # GOV.UK Design System components  
+    │   ├── BaseHead.astro   # HTML head component
+    │   ├── Footer.astro     # Site footer
+    │   └── Navigation.astro # Site navigation
+    ├── layouts/             # Page layouts
+    │   └── BaseLayout.astro # Main page wrapper
+    ├── pages/              # Your website pages (auto-routing)
+    │   ├── index.astro     # Homepage (/)
+    │   ├── about.astro     # About page (/about)
+    │   └── [other pages]   # Add more pages here
+    ├── config/             # Site configuration
+    │   └── navigation.ts   # Navigation menu setup
+    └── styles/             # CSS and styling</pre>`
+  },
+  {
+    id: "adding-pages",
+    title: "Adding New Pages",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li>Create a new .astro file in <code class="govuk-!-font-family-monospace">src/pages/</code><br>
+          Example: <code class="govuk-!-font-family-monospace">src/pages/services.astro</code></li>
+      <li>Use the BaseLayout:
+          <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; margin: 8px 0; border-left: 4px solid #b1b4b6;">---
+          import BaseLayout from "../layouts/BaseLayout.astro";
+          ---
+          &lt;BaseLayout title="Services"&gt;
+            &lt;main class="govuk-main-wrapper" id="main-content"&gt;
+              &lt;h1 class="govuk-heading-xl"&gt;Services&lt;/h1&gt;
+              &lt;p class="govuk-body"&gt;Your content here...&lt;/p&gt;
+            &lt;/main&gt;
+          &lt;/BaseLayout&gt;</pre></li>
+                <li>The page will automatically be available at <code class="govuk-!-font-family-monospace">/services</code></li>
+                <li>Add to navigation in <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> if needed</li>
+    </ol>`
+  },
+  {
+    id: "customisation",
+    title: "Customising Your Site",
+    content: `<ol class="govuk-list govuk-list--number">
+      <li><strong>Site branding:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Logo.astro</code> to change your site name/logo</li>
+      <li><strong>Navigation:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/config/navigation.ts</code> to modify menu items</li>
+      <li><strong>Footer links:</strong><br>
+          Edit <code class="govuk-!-font-family-monospace">src/components/Footer.astro</code> for footer content</li>
+      <li><strong>Site metadata:</strong><br>
+          Update <code class="govuk-!-font-family-monospace">src/components/BaseHead.astro</code> for SEO settings</li>
+      <li><strong>Colors & styling:</strong><br>
+          GOV.UK Design System colors are built-in, but you can customise in <code class="govuk-!-font-family-monospace">src/styles/</code></li>
+    </ol>`
+  }
+];
+
+
 ---
 
 <BaseLayout title="Quick Start">
     <Back link="/" />
 	<main class="govuk-main-wrapper app-main-class" id="main-content">
 		<h1 class="govuk-heading-xl">Quick Start Guide</h1>
-        <p class="govuk-body-l">Get up and running with your GDS Design System website.</p>
-        
-        <h2 class="govuk-heading-l">Getting Started</h2>
-        <Accordion id="getting-started" items={gettingStartedItems} />
-
+        <p class="govuk-body-l">Get up and running with your GDS Design System website.</p>          
+          <h2 class="govuk-heading-l">Setup Instructions</h2>
+        <TabGroup 
+          id="setup-tabs" 
+          title="Choose your platform"
+          tabs={[
+            { title: "macOS", id: "macos" },
+            { title: "Windows", id: "windows" },
+            { title: "Linux", id: "linux" }
+          ]}
+        >
+          <Tab title="macOS" id="macos" isFirst={true}>
+            <Accordion id="macos-accordion" items={macos} />
+          </Tab>
+          <Tab title="Windows" id="windows">
+            <Accordion id="windows-accordion" items={windows} />
+          </Tab>
+          <Tab title="Linux" id="linux">
+            <Accordion id="linux-accordion" items={linux} />
+          </Tab>
+        </TabGroup>
 
         <h2 class="govuk-heading-l">Next Steps</h2>
         <ul class="govuk-list govuk-list--bullet">
