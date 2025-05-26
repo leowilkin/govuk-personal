@@ -14,6 +14,8 @@ cd my-govuk-site
 npm run dev
 ```
 
+See more information here: [govuk.wilkin.xyz](https://govuk.wilkin.xyz/quickstart/).
+
 ## Why it can't look exactly like GOV.UK
 
 > If your service is not on a service.gov.uk domain, you cannot use the GOV.UK crown logo.

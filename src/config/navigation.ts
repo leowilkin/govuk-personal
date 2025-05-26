@@ -51,7 +51,7 @@ export interface FooterLink {
 export const footerLinks: FooterLink[] = [
   {
     label: "Help",
-    href: "/help",
+    href: "https://github.com/leowilkin/govuk-personal/issues",
   },
   {
     label: "Contact",

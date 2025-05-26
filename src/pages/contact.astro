@@ -2,6 +2,21 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import Back from "../components/govuk/Back.astro";
 import Phase from "../components/govuk/Phase.astro";
+import Accordion from "../components/govuk/Accordion.astro";
+
+const gettingStartedItems = [
+  {
+    id: "github",
+    title: "GitHub Issues",
+    content: `Got an issue, or need a feature? Please open an issue on the <a class="govuk-link" href="https://github.com/leowilkin/govuk-personal/issues" target="_blank" rel="noopener noreferrer">GitHub repository</a>.`
+  },
+  {
+    id: "email",
+    title: "Send an Email",
+    content: `If you are super stuck, send me an email at leo [at] wilkin [dot] xyz.`
+  }
+];
+
 ---
 
 <BaseLayout title="Contact">
@@ -10,12 +25,6 @@ import Phase from "../components/govuk/Phase.astro";
 	<main class="govuk-main-wrapper app-main-class" id="main-content">
 		<h1 class="govuk-heading-xl">Contact Me</h1>
 		<p class="govuk-body-l">Get in touch for opportunities or collaborations.</p>
-		
-		<div class="govuk-grid-row">
-			<div class="govuk-grid-column-two-thirds">
-				<h2 class="govuk-heading-m">Contact Information</h2>
-				<p class="govuk-body">You can reach me through the following channels:</p>
-			</div>
-		</div>
+		<Accordion id="contact" items={gettingStartedItems} />
 	</main>
 </BaseLayout>
