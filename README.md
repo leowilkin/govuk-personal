@@ -1,4 +1,8 @@
-# GOV.UK, but it's personal
+![Banner](https://github.com/user-attachments/assets/f76a53e1-0364-4372-b28d-38aec1b6ed39)
+
+[GOV.UK but it's personal project README]: # 
+
+## The Pitch
 
 Are you a well-seasoned open-sourcerer and love the work that the UK Gov Digital Services do?
 
