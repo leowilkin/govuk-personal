@@ -1,0 +1,17 @@
+---
+export interface Props {
+  class?: string;
+  id?: string;
+}
+
+const {
+  class: className = '',
+  id
+} = Astro.props;
+
+const classes = ['govuk-button-group', className].filter(Boolean).join(' ');
+---
+
+<div class={classes} id={id}>
+  <slot />
+</div>

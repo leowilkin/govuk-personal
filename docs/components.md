@@ -6,20 +6,21 @@ For reference, view [this GDS link](https://design-system.service.gov.uk/compone
 
 View a list of all the components supported by this implementation, and the links to their relevant GDS Docs page.
 
-| Name                |                 Status                | Link                                                                       | Comments                                                                                     |
+| Name                |                 Status                | Link                                                                        | Comments                                                                                     |
 |---------------------|:-------------------------------------:|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Accordion           | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/accordion/)           |                                                                                              |
 | Back Link           | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/back-link/)           |                                                                                              |
 | Breadcrumbs         | Partially Supported                   | [GDS](https://design-system.service.gov.uk/components/breadcrumbs/)         | Does not collapse on mobile to first & last                                                  |
-| Button              | Partially Supported                   | [GDS](https://design-system.service.gov.uk/components/button/)              | Does not support different styles, currently using the 'Start now' type as default.          |
+| Button              | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/button/)              | See more info [here](https://govuk.wilkin.xyz/buttons).                                      |
+| ButtonGroup         | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/button/)              | Container for grouping buttons and links                                                     |
 | Details             | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/details/)             |                                                                                              |
 | Inset text          | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/inset-text/)          |                                                                                              |
 | Notification banner | Partially Supported                   | [GDS](https://design-system.service.gov.uk/components/notification-banner/) | Does not support different styles (important, success).                                      |
 | Pagination          | Barely Supported                      | [GDS](https://design-system.service.gov.uk/components/pagination/)          | Does not support most features, this is a stand-in for a wider development of the component. |
 | Phase banner        | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/phase-banner/)        |                                                                                              |
-| Tab (Nested)        | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                | Enhanced nested component structure using TabGroup and Tab components                        |
-| TabGroup (Nested)   | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                | Container component for organizing multiple Tab components                                   |
-| Tabs (Legacy)       | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                | Data-driven approach, use TabGroup/Tab for new implementations                              |
+| Tab (Nested)        | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                | Better structure using Tabs & TabGroups                                                      |
+| TabGroup (Nested)   | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                |                                                                                              |
+| Tabs (Legacy)       | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                |                                                                                              |
 | Warning text        | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/warning-text/)        |                                                                                              |
 
 ## TabGroup and Tab Components
@@ -228,22 +229,203 @@ To migrate from the legacy `Tabs` component to the new nested structure:
    </TabGroup>
    ```
 
+## Button and ButtonGroup Components
+
+The `Button` and `ButtonGroup` components provide comprehensive support for all GOV.UK button patterns and variants.
+
+### Button Component
+
+The `Button` component supports all official GOV.UK button styles and can render as either a `<button>` element or an `<a>` element depending on whether an `href` is provided.
+
+#### Button Props
+
+| Property | Type | Required | Default | Description |
+|----------|------|----------|---------|-------------|
+| `children` | `string` | No | - | The text content of the button (preferred over `title`) |
+| `title` | `string` | No | - | **Deprecated:** Use `children` instead |
+| `variant` | `'primary' \| 'secondary' \| 'warning' \| 'start'` | No | `'primary'` | Button style variant |
+| `href` | `string` | No | - | URL for link buttons (renders as `<a>` element) |
+| `link` | `string` | No | - | **Deprecated:** Use `href` instead |
+| `type` | `'button' \| 'submit' \| 'reset'` | No | `'button'` | Button type for form buttons |
+| `disabled` | `boolean` | No | `false` | Whether the button is disabled |
+| `preventDoubleClick` | `boolean` | No | `false` | Prevent double-click submissions |
+| `class` | `string` | No | `''` | Additional CSS classes |
+| `name` | `string` | No | - | Button name attribute |
+| `value` | `string` | No | - | Button value attribute |
+| `id` | `string` | No | - | Button id attribute |
+
+#### Button Examples
+
+**Primary Button (Default):**
+```astro
+<Button>Save and continue</Button>
+```
+
+**Secondary Button:**
+```astro
+<Button variant="secondary">Find address</Button>
+```
+
+**Warning Button:**
+```astro
+<Button variant="warning">Delete account</Button>
+```
+
+**Start Button:**
+```astro
+<Button variant="start" href="/start">Start now</Button>
+```
+
+**Disabled Button:**
+```astro
+<Button disabled>Disabled button</Button>
+```
+
+**Form Submit Button:**
+```astro
+<Button type="submit" preventDoubleClick>Confirm and send</Button>
+```
+
+**Button with Custom Attributes:**
+```astro
+<Button 
+  type="submit" 
+  name="action" 
+  value="save"
+  id="save-button"
+  class="custom-class"
+>
+  Save draft
+</Button>
+```
+
+### ButtonGroup Component
+
+The `ButtonGroup` component provides a container for grouping buttons and links, ensuring proper spacing and alignment.
+
+#### ButtonGroup Props
+
+| Property | Type | Required | Default | Description |
+|----------|------|----------|---------|-------------|
+| `class` | `string` | No | `''` | Additional CSS classes |
+| `id` | `string` | No | - | Button group id attribute |
+
+#### ButtonGroup Examples
+
+**Basic Button Group:**
+```astro
+import Button from "../components/govuk/Button.astro";
+import ButtonGroup from "../components/govuk/ButtonGroup.astro";
+
+<ButtonGroup>
+  <Button type="submit">Save and continue</Button>
+  <Button variant="secondary">Save as draft</Button>
+</ButtonGroup>
+```
+
+**Button Group with Link:**
+```astro
+<ButtonGroup>
+  <Button type="submit">Continue</Button>
+  <a class="govuk-link" href="/cancel">Cancel</a>
+</ButtonGroup>
+```
+
+**Button Group with Custom ID:**
+```astro
+<ButtonGroup id="form-actions">
+  <Button type="submit" variant="warning">Delete</Button>
+  <Button variant="secondary" href="/back">Go back</Button>
+</ButtonGroup>
+```
+
+### Button Variants
+
+#### Primary Button
+The default button style for main actions:
+```astro
+<Button>Save and continue</Button>
+```
+Renders: `<button type="button" class="govuk-button" data-module="govuk-button">`
+
+#### Secondary Button
+For secondary actions or when multiple buttons are present:
+```astro
+<Button variant="secondary">Find address</Button>
+```
+Renders: `<button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">`
+
+#### Warning Button
+For destructive actions that need emphasis:
+```astro
+<Button variant="warning">Delete account</Button>
+```
+Renders: `<button type="button" class="govuk-button govuk-button--warning" data-module="govuk-button">`
+
+#### Start Button
+For call-to-action buttons, typically used on start pages:
+```astro
+<Button variant="start" href="/start">Start now</Button>
+```
+Renders: `<a href="/start" role="button" class="govuk-button govuk-button--start" data-module="govuk-button">` with arrow icon
+
+### Element Types
+
+#### Link Buttons
+When `href` is provided, renders as an `<a>` element:
+```astro
+<Button href="/next-page">Continue</Button>
+```
+
+#### Form Buttons
+When no `href` is provided, renders as a `<button>` element:
+```astro
+<Button type="submit">Submit form</Button>
+```
+
+### Special Features
+
+#### Prevent Double-Click
+Prevents accidental double submissions:
+```astro
+<Button type="submit" preventDoubleClick>Confirm and send</Button>
+```
+Adds `data-prevent-double-click="true"` attribute.
+
+#### Disabled State
+Disables the button and adds appropriate ARIA attributes:
+```astro
+<Button disabled>Cannot proceed</Button>
+```
+Adds `disabled` and `aria-disabled="true"` attributes.
+
+### Migration from Legacy Button
+
+The enhanced Button component maintains backward compatibility:
+
+**Old usage (still works):**
+```astro
+<Button title="Start now" link="/start" />
+```
+
+**New preferred usage:**
+```astro
+<Button variant="start" href="/start">Start now</Button>
+```
+
 ### Best Practices
 
-1. **Always mark the first tab:** Set `isFirst={true}` on the first `Tab` component
-2. **Consistent IDs:** Ensure `id` and `title` props match between `TabGroup.tabs` array and individual `Tab` components
-3. **Meaningful titles:** Use descriptive tab titles for better accessibility
-4. **Unique IDs:** Ensure tab IDs are unique across the entire page
-5. **Semantic content:** Structure tab content with proper headings and GOV.UK classes
+1. **Use semantic button types:** Set `type="submit"` for form submissions
+2. **Provide clear labels:** Use descriptive button text
+3. **Choose appropriate variants:** Use warning for destructive actions, secondary for less important actions
+4. **Group related actions:** Use ButtonGroup for multiple related buttons
+5. **Prevent double submissions:** Use `preventDoubleClick` for important form submissions
+6. **Accessibility:** Disabled buttons automatically include proper ARIA attributes
 
-### Accessibility
+### Accessibility Features
 
-The components maintain full GOV.UK accessibility standards:
-
-- Proper ARIA labels and relationships
-- Keyboard navigation support
-- Screen reader compatibility
-- Focus management
-- Progressive enhancement
-
-Both components work seamlessly with the GOV.UK Frontend JavaScript for enhanced functionality.
+- **Semantic elements:** Renders as `<button>` or `<a>` based on usage
+- **ARIA attributes:** Proper `aria-disabled` for disabled buttons
+- **Role attributes:** Link buttons include `role="button"`
+- **Focus management:** Standard keyboard navigation support
+- **Screen reader support:** Clear button text and appropriate element types
