@@ -27,7 +27,7 @@ import ButtonGroup from "../components/govuk/ButtonGroup.astro";
         
         <h3 class="govuk-heading-m">Start Button</h3>
         <p class="govuk-body">For call-to-action buttons, typically used on start pages:</p>
-        <Button variant="start" href="#start">Start now</Button>
+        <Button variant="start">Start now</Button>
         
         <h3 class="govuk-heading-m">Disabled Button</h3>
         <p class="govuk-body">Disabled state for buttons that cannot be activated:</p>
@@ -63,7 +63,7 @@ import ButtonGroup from "../components/govuk/ButtonGroup.astro";
         <p class="govuk-body">Buttons grouped with a cancel link:</p>
         <ButtonGroup>
             <Button type="submit">Continue</Button>
-            <a class="govuk-link" href="/">Cancel</a>
+            <a class="govuk-link">Cancel</a>
         </ButtonGroup>
         
         <h3 class="govuk-heading-m">Mixed Button Group</h3>
@@ -71,7 +71,7 @@ import ButtonGroup from "../components/govuk/ButtonGroup.astro";
         <ButtonGroup>
             <Button variant="warning">Delete</Button>
             <Button variant="secondary" href="/edit">Edit</Button>
-            <Button href="/view">View</Button>
+            <Button>View</Button>
         </ButtonGroup>
         
         <h2 class="govuk-heading-l">Form Example</h2>
@@ -88,7 +88,7 @@ import ButtonGroup from "../components/govuk/ButtonGroup.astro";
             <ButtonGroup>
                 <Button type="submit" preventDoubleClick>Submit application</Button>
                 <Button type="button" variant="secondary">Save as draft</Button>
-                <a class="govuk-link" href="/">Cancel</a>
+                <a class="govuk-link">Cancel</a>
             </ButtonGroup>
         </form>
         
@@ -122,7 +122,7 @@ import ButtonGroup from "../components/govuk/ButtonGroup.astro";
         <Button title="Legacy title prop" link="/legacy" />
         <p class="govuk-body govuk-!-font-size-14">
             <strong>Note:</strong> While <code class="govuk-!-font-family-monospace">title</code> and <code class="govuk-!-font-family-monospace">link</code> props still work, 
-            it's recommended to use <code class="govuk-!-font-family-monospace">children</code> and <code class="govuk-!-font-family-monospace">href</code> for new implementations.
+            I'd recommend you use <code class="govuk-!-font-family-monospace">children</code> and <code class="govuk-!-font-family-monospace">href</code>.
         </p>
 	</main>
 </BaseLayout>

@@ -6,21 +6,21 @@ For reference, view [this GDS link](https://design-system.service.gov.uk/compone
 
 View a list of all the components supported by this implementation, and the links to their relevant GDS Docs page.
 
-| Name                |                 Status                | Link                                                                       | Comments                                                                                     |
+| Name                |                 Status                | Link                                                                        | Comments                                                                                     |
 |---------------------|:-------------------------------------:|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------|
 | Accordion           | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/accordion/)           |                                                                                              |
 | Back Link           | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/back-link/)           |                                                                                              |
 | Breadcrumbs         | Partially Supported                   | [GDS](https://design-system.service.gov.uk/components/breadcrumbs/)         | Does not collapse on mobile to first & last                                                  |
-| Button              | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/button/)              | Supports all variants: primary, secondary, warning, start, disabled, prevent double-click    |
-| ButtonGroup         | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/button/)              | Container for grouping buttons and links                                                    |
+| Button              | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/button/)              | See more info [here](https://govuk.wilkin.xyz/buttons).                                      |
+| ButtonGroup         | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/button/)              | Container for grouping buttons and links                                                     |
 | Details             | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/details/)             |                                                                                              |
 | Inset text          | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/inset-text/)          |                                                                                              |
 | Notification banner | Partially Supported                   | [GDS](https://design-system.service.gov.uk/components/notification-banner/) | Does not support different styles (important, success).                                      |
 | Pagination          | Barely Supported                      | [GDS](https://design-system.service.gov.uk/components/pagination/)          | Does not support most features, this is a stand-in for a wider development of the component. |
 | Phase banner        | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/phase-banner/)        |                                                                                              |
-| Tab (Nested)        | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                | Enhanced nested component structure using TabGroup and Tab components                        |
-| TabGroup (Nested)   | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                | Container component for organizing multiple Tab components                                   |
-| Tabs (Legacy)       | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                | Data-driven approach, use TabGroup/Tab for new implementations                              |
+| Tab (Nested)        | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                | Better structure using Tabs & TabGroups                                                      |
+| TabGroup (Nested)   | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                |                                                                                              |
+| Tabs (Legacy)       | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/tabs/)                |                                                                                              |
 | Warning text        | Fully Supported                       | [GDS](https://design-system.service.gov.uk/components/warning-text/)        |                                                                                              |
 
 ## TabGroup and Tab Components
