@@ -2,7 +2,6 @@
 
 [GOV.UK but it's personal project README]: # 
 
-![GitHub commits since latest release](https://img.shields.io/github/commits-since/leowilkin/govuk-personal/latest)
 ![GitHub last commit](https://img.shields.io/github/last-commit/leowilkin/govuk-personal)
 ![NPM Downloads](https://img.shields.io/npm/dw/create-govuk-personal)
 ![NPM License](https://img.shields.io/npm/l/create-govuk-personal)
