@@ -2,6 +2,15 @@
 
 [GOV.UK but it's personal project README]: # 
 
+![GitHub commits since latest release](https://img.shields.io/github/commits-since/leowilkin/govuk-personal/latest)
+![GitHub last commit](https://img.shields.io/github/last-commit/leowilkin/govuk-personal)
+![NPM Downloads](https://img.shields.io/npm/dw/create-govuk-personal)
+![NPM License](https://img.shields.io/npm/l/create-govuk-personal)
+![Website](https://img.shields.io/website?url=https%3A%2F%2Fgovuk.wilkin.xyz)
+![GitHub Repo stars](https://img.shields.io/github/stars/leowilkin/govuk-personal)
+
+
+
 ## The Pitch
 
 Are you a well-seasoned open-sourcerer and love the work that the UK Gov Digital Services do?
