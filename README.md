@@ -8,8 +8,6 @@
 ![Website](https://img.shields.io/website?url=https%3A%2F%2Fgovuk.wilkin.xyz)
 ![GitHub Repo stars](https://img.shields.io/github/stars/leowilkin/govuk-personal)
 
-
-
 ## The Pitch
 
 Are you a well-seasoned open-sourcerer and love the work that the UK Gov Digital Services do?
@@ -49,3 +47,9 @@ Visit the [documentation](https://github.com/leowilkin/govuk-personal/blob/main/
 This project is not affiliated by GDS, or the UK Govt. in any shape or form. I do love GDS though, so show them some love on their GitHub: [@alphagov](https://github.com/alphagov).
 
 This work remains under the MIT License, with modifications attributable to [@leowilkin](https://github.com/leowilkin). View the licence [here](https://github.com/leowilkin/govuk-personal/blob/main/LICENSE).
+
+## The Footnote
+
+This project was made for The Journey v2, a project at [Hack Club](https://hackclub.com). It's been a whirlwind of fun, I've spent nearly 9 hours working on this with a supportive Slack community helping me debug bits. Despite working for the end goal of shipping this (I HAVE!), it's been a lot of personal development, and a lot of fun!
+
+~ Leo, Jun 6th 2025

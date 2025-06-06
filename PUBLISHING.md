@@ -18,12 +18,10 @@
 2. **Test locally**:
 
    ```bash
-   # Test the create script
    cd ../
    mkdir test-project
    cd test-project
    node ../govuk-personal/index.js
-   # Follow prompts to test creation
    cd ../
    rm -rf test-project
    ```
