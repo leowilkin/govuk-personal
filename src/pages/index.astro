@@ -12,12 +12,15 @@ import Button from "../components/govuk/Button.astro";
 		<p class="govuk-body">Are you a well-seasoned open-sourcerer and love the work that the UK Gov Digital Services do?</p>
 		<p class="govuk-body">Are you also like me and have a bit of a <i>thing</i> for the GOV.UK Design System?</p>
 		<p class="govuk-body">The only sane solution would be to turn GDS's production Design System kit into a personal website templating kit.</p>
-		<NotificationBanner
+		<Button data-cabin-event="Docs" href="/about">Read the documentation</Button>
+		<p class="govuk-body">or quick-start with:</p>
+		<pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">npm create govuk-personal@latest</pre>
+				<NotificationBanner
 			title="This is not maintained, or supported by the GDS team."
 			desc="This is an independent, personal project to demonstrate the GDS Design System in a personal context."
 			link="https://github.com/leowilkin/govuk-personal"
 			linkdesc="Learn more"
 		/>
-		<Button title="Read the documentation" data-cabin-event="Docs" link="/about" />
+
 	</main>
 </BaseLayout>
