@@ -1,4 +1,4 @@
-![Banner](https://github.com/user-attachments/assets/f76a53e1-0364-4372-b28d-38aec1b6ed39)
+![Banner](/public/assets/images/README.png)
 
 [GOV.UK but it's personal project README]: # 
 
