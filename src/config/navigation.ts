@@ -30,7 +30,7 @@ export const navigation: NavigationItem[] = [
   },
   {
     label: "Components",
-    href: "https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md",
+    href: "/components",
   }
 ];
 

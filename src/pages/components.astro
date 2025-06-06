@@ -1,0 +1,194 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Back from "../components/govuk/Back.astro";
+import Button from "../components/govuk/Button.astro";
+import ButtonGroup from "../components/govuk/ButtonGroup.astro";
+import Accordion from "../components/govuk/Accordion.astro";
+import NotificationBanner from "../components/govuk/NotificationBanner.astro";
+
+const accordion_content = [
+  {
+    id: "1",
+    title: "Title 1",
+    content: `Example 1`
+  },
+  {
+    id: "2",
+    title: "Title 2",
+    content: `Example 2`
+  },
+  {
+    id: "3",
+    title: "Title 3",
+    content: `Example 3`
+  }
+];
+
+---
+
+<BaseLayout title="Components">
+    <Back link="/" />
+	<main class="govuk-main-wrapper app-main-class" id="main-content">
+		<h1 class="govuk-heading-xl">Components</h1>
+        <Button variant="start" href="https://github.com/leowilkin/govuk-personal/blob/main/docs/components.md">View the GitHub</Button>
+
+        <h2 class="govuk-heading-l">Buttons</h2>
+
+        <h3 class="govuk-heading-m">Primary Button (Default)</h3>
+        <p class="govuk-body">The default button style for main actions:</p>
+        <Button>Save and continue</Button>
+        
+        <h3 class="govuk-heading-m">Secondary Button</h3>
+        <p class="govuk-body">For secondary actions or when multiple buttons are present:</p>
+        <Button variant="secondary">Find address</Button>
+        
+        <h3 class="govuk-heading-m">Warning Button</h3>
+        <p class="govuk-body">For destructive actions that need emphasis:</p>
+        <Button variant="warning">Delete account</Button>
+        
+        <h3 class="govuk-heading-m">Start Button</h3>
+        <p class="govuk-body">For call-to-action buttons, typically used on start pages:</p>
+        <Button variant="start">Start now</Button>
+        
+        <h3 class="govuk-heading-m">Disabled Button</h3>
+        <p class="govuk-body">Disabled state for buttons that cannot be activated:</p>
+        <Button disabled>Disabled button</Button>
+        
+        <h2 class="govuk-heading-l">Button Types</h2>
+        
+        <h3 class="govuk-heading-m">Link Buttons</h3>
+        <p class="govuk-body">Buttons that navigate to other pages:</p>
+        <Button href="/about">Go to About page</Button>
+        
+        <h3 class="govuk-heading-m">Form Buttons</h3>
+        <p class="govuk-body">Buttons for form submission and interaction:</p>
+        <div class="govuk-form-group">
+            <Button type="submit">Submit form</Button>
+            <Button type="reset" variant="secondary">Reset form</Button>
+        </div>
+        
+        <h3 class="govuk-heading-m">Prevent Double-Click</h3>
+        <p class="govuk-body">Prevents accidental double submissions:</p>
+        <Button type="submit" preventDoubleClick>Confirm and send</Button>
+        
+        <h2 class="govuk-heading-l">Button Groups</h2>
+        
+        <h3 class="govuk-heading-m">Basic Button Group</h3>
+        <p class="govuk-body">Multiple related actions grouped together:</p>
+        <ButtonGroup>
+            <Button type="submit">Save and continue</Button>
+            <Button variant="secondary">Save as draft</Button>
+        </ButtonGroup>
+        
+        <h3 class="govuk-heading-m">Button Group with Link</h3>
+        <p class="govuk-body">Buttons grouped with a cancel link:</p>
+        <ButtonGroup>
+            <Button type="submit">Continue</Button>
+            <a class="govuk-link">Cancel</a>
+        </ButtonGroup>
+        
+        <h3 class="govuk-heading-m">Mixed Button Group</h3>
+        <p class="govuk-body">Different button variants in a group:</p>
+        <ButtonGroup>
+            <Button variant="warning">Delete</Button>
+            <Button variant="secondary" href="/edit">Edit</Button>
+            <Button>View</Button>
+        </ButtonGroup>
+        
+        <h2 class="govuk-heading-l">Form Example</h2>
+        <p class="govuk-body">Example of buttons in a form context:</p>
+        
+        <form class="govuk-form">
+            <div class="govuk-form-group">
+                <label class="govuk-label govuk-label--m" for="example-input">
+                    Example input
+                </label>
+                <input class="govuk-input" id="example-input" name="example" type="text">
+            </div>
+            
+            <ButtonGroup>
+                <Button type="submit" preventDoubleClick>Submit application</Button>
+                <Button type="button" variant="secondary">Save as draft</Button>
+                <a class="govuk-link">Cancel</a>
+            </ButtonGroup>
+        </form>
+        
+        <h2 class="govuk-heading-l">Code Examples</h2>
+        
+        <h3 class="govuk-heading-m">Basic Usage</h3>
+        <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">&lt;Button&gt;Save and continue&lt;/Button&gt;
+            &lt;Button variant="secondary"&gt;Find address&lt;/Button&gt;
+            &lt;Button variant="warning"&gt;Delete account&lt;/Button&gt;
+            &lt;Button variant="start" href="/start"&gt;Start now&lt;/Button&gt;
+        </pre>
+                    
+        <h3 class="govuk-heading-m">Button Groups</h3>
+        <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">&lt;ButtonGroup&gt;
+            &lt;Button type="submit"&gt;Continue&lt;/Button&gt;
+            &lt;Button variant="secondary"&gt;Save draft&lt;/Button&gt;
+            &lt;a class="govuk-link" href="/cancel"&gt;Cancel&lt;/a&gt;
+            &lt;/ButtonGroup&gt;
+        </pre>
+        
+        <h3 class="govuk-heading-m">Form Buttons</h3>
+        <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">&lt;Button 
+            type="submit" 
+            preventDoubleClick
+            name="action" 
+            value="submit"
+            &gt;
+            Confirm and send
+            &lt;/Button&gt;
+        </pre>
+
+        <h2 class="govuk-heading-l">Accordion</h2>
+        <Accordion id="macos-accordion" items={accordion_content} />
+        <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">
+            const accordion_content = &lbrace;
+                &lbrace;
+                    id: "1",
+                    title: "Title 1",
+                    content: `Example 1`
+                &rbrace;,
+                &lbrace;
+                    id: "2",
+                    title: "Title 2",
+                    content: `Example 2`
+                &rbrace;,
+                &lbrace;
+                    id: "3",
+                    title: "Title 3",
+                    content: `Example 3`
+                &rbrace;
+            &rbrace;
+        </pre>
+
+        <h2 class="govuk-heading-l">Back Link</h2>
+        <Back link="https://govuk.wilkin.xyz/"/>
+        <br>
+        or using a custom slot:
+        <br>
+        <Back link="https://govuk.wilkin.xyz/">Return</Back>
+
+        <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">
+        &lt;Back link="https://govuk.wilkin.xyz/"/&gt;
+        &lt;Back link="https://govuk.wilkin.xyz/"&gt;Return&lt;/Back&gt;
+        </pre>
+        <h2 class="govuk-heading-l">Notification Banner</h2>
+        <NotificationBanner
+			title="Title"
+			desc="Description"
+			link="https://github.com/leowilkin/govuk-personal"
+			linkdesc="Custom link"
+		/>
+        <pre class="govuk-!-font-family-monospace govuk-!-font-size-14" style="background: #f3f2f1; padding: 16px; border-left: 4px solid #b1b4b6;">
+        &lt;NotificationBanner
+			title="Title"
+			desc="Description"
+			link="https://github.com/leowilkin/govuk-personal"
+			linkdesc="Custom link"
+		/&gt;
+        </pre>
+
+	</main>
+</BaseLayout>
