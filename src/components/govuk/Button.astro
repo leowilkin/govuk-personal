@@ -31,11 +31,9 @@ const {
   id
 } = Astro.props;
 
-// Support legacy props
 const buttonText = children || title;
 const buttonHref = href || link;
 
-// Check if we have slot content
 const hasSlotContent = Astro.slots.has('default');
 
 const baseClasses = 'govuk-button';
