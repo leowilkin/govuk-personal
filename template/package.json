@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.8.0",
+    "astro": "^6.1.8",
     "govuk-frontend": "^5.10.1",
     "nunjucks": "^3.2.4",
     "sass": "^1.89.0"
